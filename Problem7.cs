@@ -19,7 +19,7 @@ class MainClass {
         max_char=str[i];
       } 
     }
-    Console.WriteLine(max_char);
+    Console.WriteLine("The most frequent character in the string is: "+max_char);
     
   }
   

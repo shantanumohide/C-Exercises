@@ -1,14 +1,14 @@
 using System;
 
-public class Bike{
+public class Vehicle{
   public string brand;
   public string model;
   public int price;
-  public Bike(string abrand, string amodel, int aprice){
+  public Vehicle(string abrand, string amodel, int aprice){
     brand = abrand; model=amodel; price=aprice;
   }
   public virtual int getMileage(){
-    return 2*price;
+    return price;
   }
 
   public void startEngine(){
@@ -16,7 +16,18 @@ public class Bike{
   }
 }
 
-public class Car:Bike{
+public class Bike:Vehicle{ 
+    public Bike(string abrand, string amodel, int aprice):base(
+      abrand, amodel, aprice){
+      brand = abrand; model=amodel; price=aprice; //roof_type=aroof_type;
+    }
+    
+    public override int getMileage(){
+        return 2*price;
+    }
+}
+
+public class Car:Vehicle{
     public string roof_type;
     
     public Car(string abrand, string amodel, int aprice):base(
@@ -35,7 +46,7 @@ public class Car:Bike{
 
 }
 
-public class Jeep:Bike{
+public class Jeep:Vehicle{
     public string roof_type;
     
     public Jeep(string abrand, string amodel, int aprice):base(
